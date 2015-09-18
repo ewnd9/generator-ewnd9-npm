@@ -59,10 +59,20 @@ module.exports = yeoman.generators.Base.extend({
         require('./gen-cli').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts, misc);
       }
 
-      var pkgData = require('./gen-package')(this.packageName, pkgDeps, pkgDevDeps, pkgScripts, misc);
-      require('fs').writeFileSync(pkgPath, JSON.stringify(pkgData, null, 2), 'utf-8');
+      var done = this.async();
+      var npmconf = require('npmconf')
 
-      this.template('_readme.md', 'README.md');
+      npmconf.load({some:'configs'}, function (err, conf) {
+        if (err) {
+          console.error(err);
+        }
+
+        var pkgData = require('./gen-package')(this.packageName, pkgDeps, pkgDevDeps, pkgScripts, misc, conf);
+        require('fs').writeFileSync(pkgPath, JSON.stringify(pkgData, null, 2), 'utf-8');
+
+        this.template('_readme.md', 'README.md');
+        done();
+      }.bind(this));
     },
     projectfiles: function () {
       var cp = function(tpl, dest) {

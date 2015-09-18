@@ -1,4 +1,4 @@
-module.exports = function(packageName, deps, devDeps, scripts, misc) {
+module.exports = function(packageName, deps, devDeps, scripts, misc, conf) {
   var result = {};
 
   result.name = packageName;
@@ -17,8 +17,8 @@ module.exports = function(packageName, deps, devDeps, scripts, misc) {
   result.keywords = [
     'INSERT_KEYWORDS'
   ];
-  result.author = 'ewnd9 <ewndnine@gmail.com>';
-  result.license = 'MIT';
+  result.author = conf.get('init-author-name') + ' <' + conf.get('init-author-email') + '>';
+  result.license = conf.get('init-license');
 
   result.dependencies = deps || {};
   result.devDependencies = devDeps || {};
