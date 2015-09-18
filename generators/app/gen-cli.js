@@ -11,6 +11,7 @@ module.exports.genPackage = function(base, pkgDeps, pkgDevDeps, pkgScripts, misc
   assign(pkgScripts, {
     "start": "node cli.js",
     "test": "mocha --require babel/register",
+    "test:watch": "mocha -w --require babel/register"
   });
 
   base.packageInstall = '$ npm install';
