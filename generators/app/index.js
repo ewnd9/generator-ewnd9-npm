@@ -8,6 +8,7 @@ var path = require('path');
 var TYPE_WEBPACK = 'webpack-dev-server';
 var TYPE_EXPRESS = 'express';
 var TYPE_CLI = 'cli';
+var TYPE_LIB = 'lib';
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
@@ -27,7 +28,7 @@ module.exports = yeoman.generators.Base.extend({
       name: 'type',
       message: 'Select Type',
       choices: [
-        'default', TYPE_WEBPACK, TYPE_EXPRESS, TYPE_CLI
+        TYPE_LIB, TYPE_WEBPACK, TYPE_EXPRESS, TYPE_CLI
       ]
     }];
 
@@ -39,8 +40,15 @@ module.exports = yeoman.generators.Base.extend({
       done();
     }.bind(this));
   },
-
   writing: {
+    git: function () {
+      var spawn = require('child_process').spawn;
+      var git = spawn('git', ['init']);
+
+      git.on('close', function (code, signal) {
+        console.log('child process terminated due to receipt of signal ' + signal);
+      });
+    },
     app: function () {
       var pkgPath = this.destinationPath('package.json');
       var pkgDeps = {};
@@ -51,7 +59,9 @@ module.exports = yeoman.generators.Base.extend({
       this.packageInstall = '$ npm install ' + this.packageName;
       this.packageUsage = 'INSERT_USAGE';
 
-      if (this.projectType === TYPE_WEBPACK) {
+      if (this.projectType === TYPE_LIB) {
+        require('./gen-lib').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts, misc);
+      } else if (this.projectType === TYPE_WEBPACK) {
         require('./gen-webpack-dev-server').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts);
       } else if (this.projectType === TYPE_EXPRESS) {
         require('./gen-express').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts);
@@ -81,9 +91,13 @@ module.exports = yeoman.generators.Base.extend({
 
       cp('editorconfig', '.editorconfig');
       cp('gitignore', '.gitignore');
+      cp('npmignore', '.npmignore');
       cp('travis.yml', '.travis.yml');
 
-      if (this.projectType === TYPE_WEBPACK) {
+      if (this.projectType === TYPE_LIB) {
+        cp('lib/index.js', 'src/index.js');
+        cp('cli/simple-spec.js', 'test/simple-spec.js');
+      } else if (this.projectType === TYPE_WEBPACK) {
         cp('webpack-dev-server/webpack.config.js', 'webpack.config.js');
         cp('webpack-dev-server/app.js', 'src/js/app.js');
         cp('webpack-dev-server/style.scss', 'src/scss/style.scss');
