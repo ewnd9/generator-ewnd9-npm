@@ -2,7 +2,8 @@ var assign = require('object-assign');
 
 module.exports.genPackage = function(base, pkgDeps, pkgDevDeps, pkgScripts, misc) {
   assign(pkgDeps, {
-    "babel": "^5.8.21"
+    "babel": "^5.8.21",
+    "update-notifier": "^0.5.0"
   });
   assign(pkgDevDeps, {
     "chai": "^3.2.0",

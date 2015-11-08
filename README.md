@@ -4,7 +4,8 @@ yo generator for node projects
 
 Templates:
 
-- cli
+- `lib`
+- `cli`
 - `express` web app
 - `webpack-dev-server` static html
 
@@ -19,4 +20,10 @@ $ npm link
 $ npm set init-author-name ewnd9
 $ npm set init-author-email ewndnine@gmail.com
 $ npm set init-license MIT
+```
+
+## Usage
+
+```
+$ yo ewnd9-npm
 ```
