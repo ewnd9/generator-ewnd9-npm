@@ -107,6 +107,7 @@ module.exports = yeoman.generators.Base.extend({
         cp('express/index.html', 'public/index.html');
         cp('express/robots.txt', 'public/robots.txt');
         cp('express/server.js', 'src/server.js');
+        cp('express/spec.js', 'test/spec.js');
       } else if (this.projectType === TYPE_CLI) {
         cp('cli/cli.js', 'cli.js');
         cp('cli/index.js', 'src/index.js');

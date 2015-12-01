@@ -10,10 +10,13 @@ module.exports.genPackage = function(base, pkgDeps, pkgDevDeps, pkgScripts) {
     "morgan": "^1.6.1"
   });
   assign(pkgDevDeps, {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
     "nodemon": "^1.4.1"
   });
   assign(pkgScripts, {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "mocha --require babel/register"
   });
 
   base.packageInstall = '$ npm install';
