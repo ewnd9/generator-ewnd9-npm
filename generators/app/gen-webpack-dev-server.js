@@ -21,5 +21,5 @@ module.exports.genPackage = function(base, pkgDeps, pkgDevDeps, pkgScripts) {
   });
 
   base.packageInstall = '$ npm install';
-  base.packageUsage = '$ webpack-dev-server';
+  base.packageUsage = '$ npm start';
 };
