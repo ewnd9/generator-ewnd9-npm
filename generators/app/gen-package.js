@@ -3,7 +3,7 @@ module.exports = function(packageName, deps, devDeps, scripts, misc, conf) {
 
   result.name = packageName;
   result.version = '0.0.0';
-  result.description = 'INSERT_DESCRIPTION';
+  result.description = '';
   result.main = misc.main || 'index.js';
   result.bin = misc.bin || void 0;
   result.scripts = scripts || {
@@ -15,7 +15,7 @@ module.exports = function(packageName, deps, devDeps, scripts, misc, conf) {
     url: 'git+https://github.com/ewnd9/' + packageName + '.git'
   };
   result.keywords = [
-    'INSERT_KEYWORDS'
+    ''
   ];
   result.author = conf.get('init-author-name') + ' <' + conf.get('init-author-email') + '>';
   result.license = conf.get('init-license');

@@ -6,13 +6,13 @@ module.exports.genPackage = function(base, pkgDeps, pkgDevDeps, pkgScripts, misc
     "update-notifier": "^0.5.0"
   });
   assign(pkgDevDeps, {
-    "chai": "^3.2.0",
-    "mocha": "^2.2.5"
+    "ava": "^0.8.0",
+    "nodemon": "^1.8.1"
   });
   assign(pkgScripts, {
     "start": "node cli.js",
-    "test": "mocha --require babel/register",
-    "test:watch": "mocha -w --require babel/register"
+    "test": "ava",
+    "test:watch": "nodemon test/*.js --exec ava"
   });
 
   base.packageInstall = '$ npm install';

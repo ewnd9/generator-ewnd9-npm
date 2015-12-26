@@ -96,7 +96,7 @@ module.exports = yeoman.generators.Base.extend({
 
       if (this.projectType === TYPE_LIB) {
         cp('lib/index.js', 'src/index.js');
-        cp('cli/simple-spec.js', 'test/simple-spec.js');
+        cp('cli/simple-spec.js', 'test/index-spec.js');
       } else if (this.projectType === TYPE_WEBPACK) {
         cp('webpack-dev-server/webpack.config.js', 'webpack.config.js');
         cp('webpack-dev-server/app.js', 'src/js/app.js');
@@ -111,7 +111,7 @@ module.exports = yeoman.generators.Base.extend({
       } else if (this.projectType === TYPE_CLI) {
         cp('cli/cli.js', 'cli.js');
         cp('cli/index.js', 'src/index.js');
-        cp('cli/simple-spec.js', 'test/simple-spec.js');
+        cp('cli/simple-spec.js', 'test/index-spec.js');
       }
     }
   },
