@@ -2,15 +2,11 @@
 
 ## Install
 
-```
 <%= packageInstall %>
-```
 
 ## Usage
 
-```
 <%= packageUsage %>
-```
 
 ## License
 
