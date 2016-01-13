@@ -127,6 +127,7 @@ module.exports = yeoman.generators.Base.extend({
       if (this.projectType === TYPE_LIB) {
         cp('lib/index.js', 'src/index.js');
         cp('cli/simple-spec.js', 'test/index-spec.js');
+        cp('babelrc-node', '.babelrc');
       } else if (this.projectType === TYPE_WEBPACK) {
         cp('webpack-dev-server/webpack.config.js', 'webpack.config.js');
         cp('webpack-dev-server/app.js', 'src/js/app.js');
