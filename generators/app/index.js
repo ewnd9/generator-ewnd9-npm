@@ -38,9 +38,6 @@ module.exports = yeoman.generators.Base.extend({
       this.packageName = props.packageName;
       this.projectType = props.type;
 
-      this.cacheFolder = __dirname + '/modules-cache/' + this.projectType;
-      this.hasModulesCache = fs.existsSync(this.cacheFolder);
-
       done();
     }.bind(this));
   },
@@ -155,11 +152,25 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    if (this.hasModulesCache) {
-      var execSync = require('child_process').execSync;
-      execSync(`cp -R ${this.cacheFolder} ${this.destinationPath('node_modules')}`);
+    var cacheBase = require('user-home') + '/.ewnd9-npm-cache';
+
+    if (!fs.existsSync(cacheBase)) {
+      fs.mkdirSync(cacheBase);
+    }
+
+    var cacheFolder = cacheBase + '/' + this.projectType;
+    var execSync = require('child_process').execSync;
+
+    if (fs.existsSync(cacheFolder)) {
+      execSync(`cp -R ${cacheFolder} ${this.destinationPath('node_modules')}`);
+      console.log(`node_modules was copied from cache ${cacheFolder}`);
     } else {
-      this.installDependencies();
+      execSync(`npm install`, {
+        cwd: this.destinationPath(),
+        stdio: [0, process.stdout, 0]
+      });
+      execSync(`cp -R ${this.destinationPath('node_modules')} ${cacheFolder}`);
+      console.log(`node_modules was copied to cache ${cacheFolder}`);
     }
   }
 });
