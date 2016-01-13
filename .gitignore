@@ -1,1 +1,4 @@
 node_modules/
+
+/generators/app/modules-cache/*
+!/generators/app/modules-cache/.keep

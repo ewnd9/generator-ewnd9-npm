@@ -4,6 +4,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
+var fs = require('fs');
 
 var TYPE_WEBPACK = 'webpack-dev-server';
 var TYPE_EXPRESS = 'express';
@@ -14,7 +15,6 @@ var TYPE_CHROME_EXTENSION = 'chrome-extension';
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
-
     this.log(yosay(
       'Welcome to the top-notch ' + chalk.red('ewnd9') + ' generator!'
     ));
@@ -37,6 +37,9 @@ module.exports = yeoman.generators.Base.extend({
       this.props = props;
       this.packageName = props.packageName;
       this.projectType = props.type;
+
+      this.cacheFolder = __dirname + '/modules-cache/' + this.projectType;
+      this.hasModulesCache = fs.existsSync(this.cacheFolder);
 
       done();
     }.bind(this));
@@ -152,6 +155,11 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    this.installDependencies();
+    if (this.hasModulesCache) {
+      var execSync = require('child_process').execSync;
+      execSync(`cp -R ${this.cacheFolder} ${this.destinationPath('node_modules')}`);
+    } else {
+      this.installDependencies();
+    }
   }
 });
