@@ -4,7 +4,7 @@ module.exports.genPackage = function(base, pkgDeps, pkgDevDeps, pkgScripts, misc
   assign(pkgDeps, {
   });
   assign(pkgDevDeps, {
-    "ava": "^0.8.0",
+    "ava": "^0.9.0",
     "babel-cli": "^6.4.0",
     "babel-core": "^6.4.0",
     "babel-plugin-lodash": "^1.1.0",

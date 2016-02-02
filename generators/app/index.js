@@ -15,9 +15,6 @@ var TYPE_CHROME_EXTENSION = 'chrome-extension';
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
-    this.log(yosay(
-      'Welcome to the top-notch ' + chalk.red('ewnd9') + ' generator!'
-    ));
 
     var prompts = [{
       type: 'input',
@@ -148,29 +145,6 @@ module.exports = yeoman.generators.Base.extend({
         cp('chrome-extension/background.js', 'src/background.js');
         cp('chrome-extension/options.js', 'src/options.js');
       }
-    }
-  },
-
-  install: function () {
-    var cacheBase = require('user-home') + '/.ewnd9-npm-cache';
-
-    if (!fs.existsSync(cacheBase)) {
-      fs.mkdirSync(cacheBase);
-    }
-
-    var cacheFolder = cacheBase + '/' + this.projectType;
-    var execSync = require('child_process').execSync;
-
-    if (fs.existsSync(cacheFolder)) {
-      execSync(`cp -R ${cacheFolder} ${this.destinationPath('node_modules')}`);
-      console.log(`node_modules was copied from cache ${cacheFolder}`);
-    } else {
-      execSync(`npm install`, {
-        cwd: this.destinationPath(),
-        stdio: [0, process.stdout, 0]
-      });
-      execSync(`cp -R ${this.destinationPath('node_modules')} ${cacheFolder}`);
-      console.log(`node_modules was copied to cache ${cacheFolder}`);
     }
   }
 });
