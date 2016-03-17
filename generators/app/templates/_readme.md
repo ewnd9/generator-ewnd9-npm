@@ -1,5 +1,7 @@
 # <%= packageName %>
 
+[![Build Status](https://travis-ci.org/ewnd9/<%= packageName %>.svg?branch=master)](https://travis-ci.org/ewnd9/<%= packageName %>)
+
 ## Install
 
 <%= packageInstall %>
