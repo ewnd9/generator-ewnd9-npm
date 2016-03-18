@@ -1,1 +1,3 @@
-console.log('PRIVET');
+'use strict';
+
+console.log('hello world!');

@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-var updateNotifier = require('update-notifier');
-var pkg = require('./package.json');
-updateNotifier({pkg: pkg}).notify();
+'use strict';
 
-require('babel/register')({ only: __dirname + '/src' });
-require('./src/index');
+const updateNotifier = require('update-notifier');
+const pkg = require('./package.json');
+updateNotifier({ pkg: pkg }).notify();
+
+require('./lib/index');

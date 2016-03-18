@@ -18,7 +18,6 @@ module.exports.genPackage = function(base, pkg) {
   base.packageInstall = '$ npm install';
   base.packageUsage = '$ npm start';
 
-  pkg.bin = 'cli.js';
   pkg.preferGlobal = 'true';
-  pkg.main = 'lib/index.js';
+  pkg.main = 'index.js';
 };

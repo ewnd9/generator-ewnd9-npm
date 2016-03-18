@@ -1,13 +1,13 @@
 # generator-ewnd9-npm
 
+[![Build Status](https://travis-ci.org/ewnd9/generator-ewnd9-npm.svg?branch=master)](https://travis-ci.org/ewnd9/generator-ewnd9-npm)
+
 yo generator for node projects
 
 Templates:
 
 - `lib`
 - `cli`
-- `express` web app
-- `webpack-dev-server` static html
 
 ## Install
 
@@ -27,3 +27,7 @@ $ npm set init-license MIT
 ```
 $ yo ewnd9-npm
 ```
+
+## License
+
+MIT © [ewnd9](http://ewnd9.com)

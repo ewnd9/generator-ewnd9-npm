@@ -15,7 +15,5 @@ module.exports = function(pkg, privileged) {
     result[key] = sorted[key];
   });
 
-  console.log(sorted, result);
-
   return result;
 };
