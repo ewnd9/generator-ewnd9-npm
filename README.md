@@ -32,7 +32,7 @@ $ yo ewnd9-npm
 
 ### Complete Pipeline
 
-- Create files via [`generator-ewnd9-npm`](this package)
+- Create files via ([`generator-ewnd9-npm`](https://github.com/ewnd9/cached-npm-repo))
 - Setup lint dependencies and git hooks ([`generator-ewnd9-eslint`](https://github.com/ewnd9/generator-ewnd9-eslint))
 - Replace npm install with copying cached previous installation based on dependencies hashsum ([`cached-npm-install`](https://github.com/ewnd9/cached-npm-repo))
 
