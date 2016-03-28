@@ -1,0 +1,24 @@
+{
+  "name": "lib",
+  "description": "",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.13.0"
+  },
+  "author": "ewnd9 <ewndnine@gmail.com>",
+  "keywords": [
+    ""
+  ],
+  "license": "MIT",
+  "preferGlobal": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewnd9/lib.git"
+  },
+  "scripts": {
+    "test": "ava",
+    "test:watch": "npm run test -- --watch"
+  }
+}
