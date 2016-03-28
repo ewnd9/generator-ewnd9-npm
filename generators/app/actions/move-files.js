@@ -13,8 +13,9 @@ module.exports = function() {
   cp('travis.yml', '.travis.yml');
 
   if (this.projectType === constants.TYPE_LIB) {
-    cp('lib/index.js', 'index.js');
-    cp('cli/test.js', 'test.js');
+    cp('lib/index.js', 'src/index.js');
+    cp('lib/test.js', 'src/test.js');
+    cp('babelrc-node', '.babelrc');
   } else if (this.projectType === constants.TYPE_CLI) {
     cp('cli/cli.js', 'cli.js');
     cp('cli/index.js', 'lib/index.js');
