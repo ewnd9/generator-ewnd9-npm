@@ -9,13 +9,15 @@
     "url": "https://github.com/ewnd9"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "generate-output": "node generate-output.js"
   },
   "files": [
     "generators"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
+    "execa": "^0.2.2",
     "npmconf": "^2.1.2",
     "object-assign": "^4.0.1",
     "sorted-object": "^2.0.0",

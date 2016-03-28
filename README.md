@@ -42,6 +42,12 @@ $ yo ewnd9-npm
 alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
 ```
 
+### Output regeneration
+
+```
+$ npm run generate-output
+```
+
 ## License
 
 MIT © [ewnd9](http://ewnd9.com)
