@@ -14,7 +14,7 @@ module.exports = function() {
 
   if (this.projectType === constants.TYPE_LIB) {
     cp('lib/index.js', 'src/index.js');
-    cp('lib/test.js', 'src/test.js');
+    cp('lib/test.js', 'test/test.js');
     cp('babelrc-node', '.babelrc');
   } else if (this.projectType === constants.TYPE_CLI) {
     cp('cli/cli.js', 'cli.js');
