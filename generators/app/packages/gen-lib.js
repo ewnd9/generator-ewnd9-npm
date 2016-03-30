@@ -1,15 +1,16 @@
 'use strict';
 
 const assign = require('../helpers/assign-object');
+const versions = require('./versions');
 
 module.exports.genPackage = function(base, pkg) {
   assign(pkg, 'dependencies', {
   });
 
   assign(pkg, 'devDependencies', {
-    "ava": "^0.13.0",
-    "babel-cli": "~6.6.0",
-    "babel-preset-es2015": "~6.6.0"
+    "ava": versions['ava'],
+    "babel-cli": versions['babel-cli'],
+    "babel-preset-es2015": versions['babel-preset-es2015']
   });
 
   assign(pkg, 'scripts', {

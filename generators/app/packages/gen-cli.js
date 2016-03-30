@@ -1,15 +1,16 @@
 'use strict';
 
 const assign = require('../helpers/assign-object');
+const versions = require('./versions');
 
 module.exports.genPackage = function(base, pkg) {
   assign(pkg, 'dependencies', {
-    "meow": "^3.7.0",
-    "update-notifier": "^0.6.0"
+    "meow": versions['meow'],
+    "update-notifier": versions['update-notifier']
   });
 
   assign(pkg, 'devDependencies', {
-    "ava": "^0.13.0"
+    "ava": versions['ava']
   });
 
   assign(pkg, 'scripts', {
