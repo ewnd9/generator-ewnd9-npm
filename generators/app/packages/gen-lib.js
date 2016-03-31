@@ -22,7 +22,7 @@ module.exports.genPackage = function(base, pkg) {
     "test:watch": "npm run test -- --watch"
   });
 
-  base.packageInstall = '$ npm install';
+  base.packageInstall = '$ npm install --save ${base.packageName}';
   base.packageUsage = '$ npm start';
 
   pkg.preferGlobal = 'true';

@@ -47,14 +47,6 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
   writing: {
-    git: function () {
-      const spawn = require('child_process').spawn;
-      const git = spawn('git', ['init']);
-
-      git.on('close', function (code, signal) {
-        console.log('child process terminated due to receipt of signal ' + signal);
-      });
-    },
     app: function () {
       const done = this.async();
 

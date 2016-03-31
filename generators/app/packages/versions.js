@@ -12,5 +12,5 @@ module.exports = {
   "react": "^0.14.7",
   "react-dom": "^0.14.7",
   "update-notifier": "^0.6.0",
-  "webpackman": "^0.3.2"
+  "webpackman": "^0.5.0"
 };

@@ -25,4 +25,7 @@ module.exports.genPackage = function(base, pkg) {
   pkg.bin = 'cli.js';
   pkg.preferGlobal = 'true';
   pkg.main = 'lib/index.js';
+  pkg.engines = {
+    "node": ">=4.0"
+  };
 };
