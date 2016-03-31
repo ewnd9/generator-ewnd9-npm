@@ -25,6 +25,6 @@ describe('ewnd9:app', function () {
     ]);
 
     assert.fileContent('package.json', /"name": "YO"/g);
-    assert.fileContent('package.json', /"main": "index.js"/g);
+    assert.fileContent('package.json', /"main": "dist\/index.js"/g);
   });
 });
