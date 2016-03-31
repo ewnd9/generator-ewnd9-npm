@@ -31,6 +31,7 @@ module.exports = yeoman.generators.Base.extend({
         choices: [
           constants.TYPE_LIB,
           constants.TYPE_CLI,
+          constants.TYPE_WEBPACK_REACT,
           constants.TYPE_CHROME_EXTENSION
         ]
       }];

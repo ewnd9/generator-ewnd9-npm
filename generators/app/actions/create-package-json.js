@@ -19,6 +19,8 @@ module.exports = function(done) {
       require('../packages/gen-lib').genPackage(this, pkgData);
     } else if (this.projectType === constants.TYPE_CLI) {
       require('../packages/gen-cli').genPackage(this, pkgData);
+    } else if (this.projectType === constants.TYPE_WEBPACK_REACT) {
+      require('../packages/gen-webpack-react').genPackage(this, pkgData);
     }
 
     const params = [

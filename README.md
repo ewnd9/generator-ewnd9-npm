@@ -8,6 +8,7 @@ Templates:
 
 - `lib`
 - `cli`
+- `react-webpack`
 
 ## Install
 
