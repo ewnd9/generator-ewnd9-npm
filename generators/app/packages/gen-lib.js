@@ -25,6 +25,5 @@ module.exports.genPackage = function(base, pkg) {
   base.packageInstall = '$ npm install --save ${base.packageName}';
   base.packageUsage = '$ npm start';
 
-  pkg.preferGlobal = 'true';
   pkg.main = 'dist/index.js';
 };
