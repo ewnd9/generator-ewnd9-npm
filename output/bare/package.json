@@ -1,13 +1,9 @@
 {
-  "name": "cli",
+  "name": "bare",
   "description": "",
   "version": "0.0.0",
-  "main": "lib/index.js",
-  "bin": "cli.js",
-  "dependencies": {
-    "meow": "^3.7.0",
-    "update-notifier": "^0.6.0"
-  },
+  "main": "index.js",
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.13.0"
   },
@@ -19,14 +15,12 @@
     ""
   ],
   "license": "MIT",
-  "preferGlobal": "true",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ewnd9/cli.git"
+    "url": "git+https://github.com/ewnd9/bare.git"
   },
   "scripts": {
     "test": "ava",
-    "start": "node cli.js",
     "test:watch": "npm run test -- --watch"
   }
 }
