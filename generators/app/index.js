@@ -29,6 +29,7 @@ module.exports = yeoman.generators.Base.extend({
         name: 'type',
         message: 'Select Type',
         choices: [
+          constants.TYPE_BARE,
           constants.TYPE_LIB,
           constants.TYPE_CLI,
           constants.TYPE_WEBPACK_REACT,

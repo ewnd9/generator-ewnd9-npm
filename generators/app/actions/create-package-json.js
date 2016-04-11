@@ -15,7 +15,9 @@ module.exports = function(done) {
     pkgData.author = conf.get('init-author-name') + ' <' + conf.get('init-author-email') + '>';
     pkgData.license = conf.get('init-license');
 
-    if (this.projectType === constants.TYPE_LIB) {
+    if (this.projectType === constants.TYPE_BARE) {
+      require('../packages/gen-bare').genPackage(this, pkgData);
+    } else if (this.projectType === constants.TYPE_LIB) {
       require('../packages/gen-lib').genPackage(this, pkgData);
     } else if (this.projectType === constants.TYPE_CLI) {
       require('../packages/gen-cli').genPackage(this, pkgData);

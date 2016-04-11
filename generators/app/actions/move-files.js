@@ -11,7 +11,12 @@ module.exports = function() {
   cp('gitignore', '.gitignore');
   cp('npmignore', '.npmignore');
 
-  if (this.projectType === constants.TYPE_LIB) {
+  if (this.projectType === constants.TYPE_BARE) {
+    cp('travis-gt-4.yml', '.travis.yml');
+
+    cp('lib/index.js', 'index.js');
+    cp('lib/test.js', 'test.js');
+  } else if (this.projectType === constants.TYPE_LIB) {
     cp('travis.yml', '.travis.yml');
 
     cp('lib/index.js', 'src/index.js');
