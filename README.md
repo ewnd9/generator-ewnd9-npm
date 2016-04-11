@@ -6,8 +6,10 @@ yo generator for node projects
 
 Templates:
 
+- `bare`
 - `lib`
 - `cli`
+- `chrome-extension`
 - `react-webpack`
 
 ## Install
@@ -47,6 +49,12 @@ alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
 
 ```
 $ npm run generate-output
+```
+
+### Checking outdated dependencies
+
+```
+$ npm run check-dependencies
 ```
 
 ## License

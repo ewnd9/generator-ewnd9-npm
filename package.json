@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "generate-output": "node generate-output.js"
+    "generate-output": "node generate-output.js",
+    "check-dependencies": "node check-dependencies"
   },
   "files": [
     "generators"
@@ -26,6 +27,7 @@
     "yosay": "^1.0.2"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "npm-check": "^5.2.1"
   }
 }
