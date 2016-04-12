@@ -31,6 +31,9 @@ module.exports = function(done) {
       'version',
       'main',
       'bin',
+      'scripts',
+      'engines',
+      'keywords',
       'dependencies',
       'devDependencies'
     ];
