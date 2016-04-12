@@ -23,6 +23,8 @@ module.exports = function(done) {
       require('../packages/gen-cli').genPackage(this, pkgData);
     } else if (this.projectType === constants.TYPE_WEBPACK_REACT) {
       require('../packages/gen-webpack-react').genPackage(this, pkgData);
+    } else if (this.projectType === constants.TYPE_KOA) {
+      require('../packages/gen-koa').genPackage(this, pkgData);
     }
 
     const params = [

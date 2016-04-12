@@ -11,6 +11,7 @@ Templates:
 - `cli`
 - `chrome-extension`
 - `react-webpack`
+- `koa`
 
 ## Install
 

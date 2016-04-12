@@ -40,6 +40,14 @@ module.exports = function() {
     cp('webpack-react/component-main/style.css', 'src/components/main/style.css');
 
     cp('webpack-react/test.js', 'test/test.js');
+  } else if (this.projectType === constants.TYPE_KOA) {
+    cp('travis-gt-4.yml', '.travis.yml');
+    cp('babelrc-node-runtime', '.babelrc');
+
+    cp('koa/index.js', 'index.js');
+    cp('koa/src/app.js', 'src/app.js');
+
+    cp('koa/test/test.js', 'test/test.js');
   } else if (this.projectType === constants.TYPE_CHROME_EXTENSION) {
     cp('travis.yml', '.travis.yml');
 
