@@ -3,18 +3,18 @@
   "description": "",
   "version": "0.0.0",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "author": "ewnd9 <ewndnine@gmail.com>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [
     ""
   ],
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ewnd9/chrome-extension.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

@@ -3,24 +3,24 @@
   "description": "",
   "version": "0.0.0",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "ava": "^0.13.0"
+  "scripts": {
+    "test": "ava",
+    "test:watch": "npm run test -- --watch"
   },
-  "author": "ewnd9 <ewndnine@gmail.com>",
   "engines": {
     "node": ">=4.0"
   },
   "keywords": [
     ""
   ],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.14.0"
+  },
+  "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ewnd9/bare.git"
-  },
-  "scripts": {
-    "test": "ava",
-    "test:watch": "npm run test -- --watch"
   }
 }
