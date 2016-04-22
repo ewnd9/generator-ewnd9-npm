@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install --save ${base.packageName}
+$ npm install --save lib
 ```
 
 ## Usage
 
-```
-$ npm start
+```js
+const lib = require('lib');
 ```
 
 ## License

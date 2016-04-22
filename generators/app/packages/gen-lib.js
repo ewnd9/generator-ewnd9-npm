@@ -22,8 +22,9 @@ module.exports.genPackage = function(base, pkg) {
     "test:watch": "npm run test -- --watch"
   });
 
-  base.packageInstall = '$ npm install --save ${base.packageName}';
-  base.packageUsage = '$ npm start';
+  base.packageInstall = `$ npm install --save ${base.packageName}`;
+  base.packageUsage = `const ${base.packageName} = require('${base.packageName}');`;
+  base.packageUsageLang = 'js';
 
   pkg.main = 'dist/index.js';
 };

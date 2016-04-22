@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install --save ${base.packageName}
+$ npm install --save bare
 ```
 
 ## Usage
 
-```
-$ npm start
+```js
+const bare = require('bare');
 ```
 
 ## License

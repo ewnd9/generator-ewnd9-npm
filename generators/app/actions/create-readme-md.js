@@ -28,10 +28,12 @@ module.exports = function() {
       ].join('\n');
 
       this.packageUsage = [
-        '```',
+        '```' + (this.packageUsageLang || ''),
         this.packageUsage,
         '```'
       ].join('\n');
+
+      console.log(this.packageUsage);
 
       this.template('_readme.md', 'README.md');
     }
