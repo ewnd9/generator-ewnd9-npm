@@ -51,8 +51,9 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
       const done = this.async();
 
-      require('./actions/create-readme-md').call(this);
-      require('./actions/create-package-json').call(this, done);
+      require('./actions/create-package-json').call(this)
+        .then(() => require('./actions/create-readme-md').call(this))
+        .then(() => done());
     },
     projectfiles: function () {
       require('./actions/move-files').apply(this);
