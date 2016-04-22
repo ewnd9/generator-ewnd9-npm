@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install webpack-react
+$ npm install
 ```
 
 ## Usage
 
 ```
-INSERT_USAGE
+$ npm start
 ```
 
 ## License

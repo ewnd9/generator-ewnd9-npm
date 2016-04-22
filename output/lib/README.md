@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install lib
+$ npm install --save ${base.packageName}
 ```
 
 ## Usage
 
 ```
-INSERT_USAGE
+$ npm start
 ```
 
 ## License

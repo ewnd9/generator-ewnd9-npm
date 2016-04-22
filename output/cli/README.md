@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install cli
+$ npm install -g cli
 ```
 
 ## Usage
 
 ```
-INSERT_USAGE
+$ cli
 ```
 
 ## License

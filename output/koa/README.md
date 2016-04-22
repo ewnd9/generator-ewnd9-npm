@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install koa
+$ npm install
 ```
 
 ## Usage
 
 ```
-INSERT_USAGE
+$ npm start
 ```
 
 ## License
