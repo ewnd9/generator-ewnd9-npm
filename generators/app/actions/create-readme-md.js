@@ -33,8 +33,6 @@ module.exports = function() {
         '```'
       ].join('\n');
 
-      console.log(this.packageUsage);
-
       this.template('_readme.md', 'README.md');
     }
 
