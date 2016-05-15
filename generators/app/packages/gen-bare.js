@@ -24,4 +24,8 @@ module.exports.genPackage = function(base, pkg) {
   pkg.engines = {
     "node": ">=4.0"
   };
+  pkg.files = [
+    'index.js',
+    'lib'
+  ];
 };

@@ -28,4 +28,7 @@ module.exports.genPackage = function(base, pkg) {
   base.packageUsageLang = 'js';
 
   pkg.main = 'dist/index.js';
+  pkg.files = [
+    'dist'
+  ];
 };
