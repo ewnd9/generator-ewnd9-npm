@@ -3,6 +3,7 @@
 module.exports = {
   "ava": "^0.14.0",
   "babel-cli": "~6.6.0",
+  "babel-core": "~6.6.0",
   "babel-plugin-transform-runtime": "~6.6.0",
   "babel-preset-es2015": "~6.6.0",
   "babel-preset-stage-0": "~6.5.0",

@@ -10,6 +10,7 @@ module.exports.genPackage = function(base, pkg) {
   assign(pkg, 'devDependencies', {
     "ava": versions['ava'],
     "babel-cli": versions['babel-cli'],
+    "babel-core": versions['babel-core'],
     "babel-preset-es2015": versions['babel-preset-es2015']
   });
 
