@@ -1,6 +1,7 @@
 'use strict';
 
 const constants = require('../constants');
+const generateFavicon = require('../helpers/gen-favicon');
 
 module.exports = function() {
   const cp = function(tpl, dest) {
@@ -40,6 +41,8 @@ module.exports = function() {
     cp('webpack-react/component-main/style.css', 'src/components/main/style.css');
 
     cp('webpack-react/test.js', 'test/test.js');
+
+    this.fs.copy(generateFavicon(), this.destinationPath('src/favicon.ico'));
   } else if (this.projectType === constants.TYPE_KOA) {
     cp('travis-gt-4.yml', '.travis.yml');
     cp('babelrc-node-runtime', '.babelrc');

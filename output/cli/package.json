@@ -23,6 +23,10 @@
     "ava": "^0.14.0"
   },
   "author": "ewnd9 <ewndnine@gmail.com>",
+  "files": [
+    "cli.js",
+    "lib"
+  ],
   "license": "MIT",
   "preferGlobal": "true",
   "repository": {

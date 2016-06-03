@@ -18,6 +18,10 @@
     "ava": "^0.14.0"
   },
   "author": "ewnd9 <ewndnine@gmail.com>",
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
