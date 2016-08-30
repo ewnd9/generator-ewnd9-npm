@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 const constants = require('./constants');
+const log = console.log.bind(console);
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
@@ -16,7 +17,7 @@ module.exports = yeoman.generators.Base.extend({
       this.packageName = process.env.PACKAGE_NAME;
       this.projectType = process.env.PACKAGE_TYPE;
 
-      console.log(`name: ${this.packageName}\ntype: ${this.projectType}`);
+      log(`name: ${this.packageName}\ntype: ${this.projectType}`);
       done();
     } else {
       const prompts = [{
@@ -33,7 +34,9 @@ module.exports = yeoman.generators.Base.extend({
           constants.TYPE_LIB,
           constants.TYPE_CLI,
           constants.TYPE_WEBPACK_REACT,
-          constants.TYPE_CHROME_EXTENSION
+          constants.TYPE_CHROME_EXTENSION,
+          constants.TYPE_ELECTRON,
+          constants.TYPE_KOA
         ]
       }];
 

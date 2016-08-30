@@ -8,6 +8,10 @@ module.exports = function() {
     this.fs.copy(this.templatePath(tpl), this.destinationPath(dest));
   }.bind(this);
 
+  const template = function(tpl, dest) {
+    this.template(this.templatePath(tpl), this.destinationPath(dest));
+  }.bind(this);
+
   cp('editorconfig', '.editorconfig');
   cp('gitignore', '.gitignore');
   cp('npmignore', '.npmignore');
@@ -58,5 +62,15 @@ module.exports = function() {
     cp('chrome-extension/index.js', 'src/index.js');
     cp('chrome-extension/background.js', 'src/background.js');
     cp('chrome-extension/options.js', 'src/options.js');
+  } else if (this.projectType === constants.TYPE_ELECTRON) {
+    cp('travis-gt-4.yml', '.travis.yml');
+    cp('babelrc-electron', '.babelrc');
+
+    cp('electron/frontend/index.js', 'frontend/index.js');
+    cp('electron/lib/index.js', 'lib/index.js');
+    template('electron/public/_index.html', 'public/index.html');
+    template('electron/public/_index-dev.html', 'public/index-dev.html');
+
+    cp('electron/webpack.config.js', 'webpack.config.js');
   }
 };
