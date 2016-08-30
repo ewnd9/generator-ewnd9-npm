@@ -11,6 +11,7 @@ module.exports = function() {
   cp('editorconfig', '.editorconfig');
   cp('gitignore', '.gitignore');
   cp('npmignore', '.npmignore');
+  cp('license', 'license');
 
   if (this.projectType === constants.TYPE_BARE) {
     cp('travis-gt-4.yml', '.travis.yml');
