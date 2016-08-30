@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports.genPackage = function(base, pkg) {
+module.exports.genPackage = function() {
   // @TODO
 };

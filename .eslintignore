@@ -1,0 +1,4 @@
+generators/app/templates/chrome-extension
+
+# use `babel-plugin` and `babel/arrow-parens` in eslintrc https://github.com/babel/eslint-plugin-babel
+generators/app/templates/koa/src/app.js

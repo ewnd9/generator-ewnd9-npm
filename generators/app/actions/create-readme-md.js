@@ -3,7 +3,7 @@
 const constants = require('../constants');
 
 module.exports = function() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     this.packageInstall = this.packageInstall || '$ npm install ' + this.packageName;
     this.packageUsage = this.packageUsage || 'INSERT_USAGE';
 

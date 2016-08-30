@@ -1,10 +1,7 @@
 'use strict';
 
 const yeoman = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 const path = require('path');
-const fs = require('fs');
 
 const constants = require('./constants');
 const log = console.log.bind(console);

@@ -1,10 +1,9 @@
 'use strict';
 
-const constants = require('../constants');
 const npmconf = require('npmconf');
 
 module.exports = function() {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     npmconf.load({ some: 'configs' }, (err, conf) => {
       if (err) {
         console.error('asd', err);
