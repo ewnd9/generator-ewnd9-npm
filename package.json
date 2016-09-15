@@ -21,6 +21,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "execa": "^0.2.2",
+    "lodash": "^4.15.0",
     "npmconf": "^2.1.2",
     "object-assign": "^4.0.1",
     "sorted-object": "^2.0.0",

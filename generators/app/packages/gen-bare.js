@@ -2,6 +2,7 @@
 
 const assign = require('../helpers/assign-object');
 const versions = require('./versions');
+const requireLine = require('./require-line');
 
 module.exports.genPackage = function(base, pkg) {
   assign(pkg, 'dependencies', {
@@ -17,7 +18,7 @@ module.exports.genPackage = function(base, pkg) {
   });
 
   base.packageInstall = `$ npm install --save ${base.packageName}`;
-  base.packageUsage = `const ${base.packageName} = require('${base.packageName}');`;
+  base.packageUsage = requireLine(base.packageName);
   base.packageUsageLang = 'js';
 
   pkg.main = 'index.js';
