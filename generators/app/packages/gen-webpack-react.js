@@ -20,8 +20,8 @@ module.exports.genPackage = function(base, pkg) {
   });
 
   assign(pkg, 'scripts', {
-    "start": "wserve",
-    "build": "rm -rf dist && NODE_ENV=production wbuild --x-vendors=react",
+    "start": "webpack-dev-server",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack.config.prod.js",
     "test": "ava",
     "test:watch": "npm run test -- --watch"
   });

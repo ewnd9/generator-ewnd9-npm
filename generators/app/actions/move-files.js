@@ -36,6 +36,8 @@ module.exports = function() {
   } else if (this.projectType === constants.TYPE_WEBPACK_REACT) {
     cp('travis.yml', '.travis.yml');
     cp('webpack-react/babelrc-webpack', '.babelrc');
+    cp('webpack-react/webpack.config.js', 'webpack.config.js');
+    cp('webpack-react/webpack.config.prod.js', 'webpack.config.prod.js');
 
     cp('webpack-react/index.js', 'src/index.js');
     cp('webpack-react/index.html', 'src/index.html');
