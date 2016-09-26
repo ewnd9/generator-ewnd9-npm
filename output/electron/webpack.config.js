@@ -12,7 +12,7 @@ const plugins = [
       'NODE_ENV': JSON.stringify(NODE_ENV),
       'APP_DIR': JSON.stringify(__dirname)
     }
-  })
+  }),
   new webpack.IgnorePlugin(new RegExp('^(fs|electron-prebuilt)$'))
 ];
 

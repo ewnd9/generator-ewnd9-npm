@@ -1,10 +1,10 @@
 function save_options() {
-  var template = document.getElementById('template').value;
+  let template = document.getElementById('template').value;
 
   chrome.storage.sync.set({
     template: template,
   }, function() {
-    var status = document.getElementById('status');
+    let status = document.getElementById('status');
     status.textContent = 'Options saved.';
     setTimeout(function() {
       status.textContent = '';
