@@ -14,7 +14,6 @@ module.exports = function() {
 
   cp('editorconfig', '.editorconfig');
   cp('gitignore', '.gitignore');
-  cp('npmignore', '.npmignore');
   cp('license', 'license');
 
   if (this.projectType === constants.TYPE_BARE) {
