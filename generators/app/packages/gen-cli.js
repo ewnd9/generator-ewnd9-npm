@@ -1,17 +1,17 @@
 'use strict';
 
 const assign = require('../helpers/assign-object');
-const versions = require('./versions');
+const { reduceDeps } = require('./versions');
 
 module.exports.genPackage = function(base, pkg) {
-  assign(pkg, 'dependencies', {
-    "meow": versions['meow'],
-    "update-notifier": versions['update-notifier']
-  });
+  assign(pkg, 'dependencies', reduceDeps([
+    'meow',
+    'update-notifier'
+  ]));
 
-  assign(pkg, 'devDependencies', {
-    "ava": versions['ava']
-  });
+  assign(pkg, 'devDependencies', reduceDeps([
+    'ava'
+  ]));
 
   assign(pkg, 'scripts', {
     "start": "node cli.js",

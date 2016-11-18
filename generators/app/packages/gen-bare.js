@@ -1,16 +1,15 @@
 'use strict';
 
 const assign = require('../helpers/assign-object');
-const versions = require('./versions');
+const { reduceDeps } = require('./versions');
 const requireLine = require('./require-line');
 
 module.exports.genPackage = function(base, pkg) {
-  assign(pkg, 'dependencies', {
-  });
+  assign(pkg, 'dependencies', {});
 
-  assign(pkg, 'devDependencies', {
-    "ava": versions['ava']
-  });
+  assign(pkg, 'devDependencies', reduceDeps([
+    'ava'
+  ]));
 
   assign(pkg, 'scripts', {
     "test": "ava",

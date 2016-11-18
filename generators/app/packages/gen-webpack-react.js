@@ -1,23 +1,23 @@
 'use strict';
 
 const assign = require('../helpers/assign-object');
-const versions = require('./versions');
+const { reduceDeps } = require('./versions');
 
 module.exports.genPackage = function(base, pkg) {
-  assign(pkg, 'dependencies', {
-    "react": versions['react'],
-    "react-dom": versions['react-dom'],
-  });
+  assign(pkg, 'dependencies', reduceDeps([
+    'react',
+    'react-dom'
+  ]));
 
-  assign(pkg, 'devDependencies', {
-    "ava": versions['ava'],
-    "babel-plugin-transform-runtime": versions['babel-plugin-transform-runtime'],
-    "babel-preset-es2015": versions['babel-preset-es2015'],
-    "babel-preset-stage-0": versions['babel-preset-stage-0'],
-    "babel-preset-react": versions['babel-preset-react'],
-    "babel-preset-react-hmre": versions['babel-preset-react-hmre'],
-    "webpackman": versions['webpackman']
-  });
+  assign(pkg, 'devDependencies', reduceDeps([
+    'ava',
+    'babel-plugin-transform-runtime',
+    'babel-preset-es2015',
+    'babel-preset-stage-0',
+    'babel-preset-react',
+    'babel-preset-react-hmre',
+    'webpackman',
+  ]));
 
   assign(pkg, 'scripts', {
     "start": "webpack-dev-server",

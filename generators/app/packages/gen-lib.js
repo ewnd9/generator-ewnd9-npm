@@ -1,19 +1,18 @@
 'use strict';
 
 const assign = require('../helpers/assign-object');
-const versions = require('./versions');
 const requireLine = require('./require-line');
+const { reduceDeps } = require('./versions');
 
 module.exports.genPackage = function(base, pkg) {
-  assign(pkg, 'dependencies', {
-  });
+  assign(pkg, 'dependencies', {});
 
-  assign(pkg, 'devDependencies', {
-    "ava": versions['ava'],
-    "babel-cli": versions['babel-cli'],
-    "babel-core": versions['babel-core'],
-    "babel-preset-es2015": versions['babel-preset-es2015']
-  });
+  assign(pkg, 'devDependencies', reduceDeps([
+    'ava',
+    'babel-cli',
+    'babel-core',
+    'babel-preset-es2015'
+  ]));
 
   assign(pkg, 'scripts', {
     "build": "babel -d dist src",
