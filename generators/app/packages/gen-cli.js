@@ -19,7 +19,7 @@ module.exports.genPackage = function(base, pkg) {
     "test:watch": "npm run test -- --watch"
   });
 
-  base.packageInstall = `$ npm install -g ${base.packageName}`;
+  base.packageInstall = `$ npm install ${base.packageName} --global`;
   base.packageUsage = `$ ${base.packageName}`;
 
   pkg.bin = 'cli.js';

@@ -24,7 +24,7 @@ module.exports.genPackage = function(base, pkg) {
     "test:watch": "npm run test -- --watch"
   });
 
-  base.packageInstall = `$ npm install --save ${base.packageName}`;
+  base.packageInstall = `$ npm install ${base.packageName} --save`;
   base.packageUsage = requireLine(base.packageName);
   base.packageUsageLang = 'js';
 

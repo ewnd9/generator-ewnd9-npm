@@ -22,7 +22,7 @@ module.exports = function() {
       this.template('chrome-extension/_options.html', 'src/options.html');
     } else {
       this.packageInstall = [
-        '```',
+        '```sh',
         this.packageInstall,
         '```'
       ].join('\n');
