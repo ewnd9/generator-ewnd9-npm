@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install --save bare
+```sh
+$ npm install bare --save
 ```
 
 ## Usage

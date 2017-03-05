@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install --save lib
+```sh
+$ npm install lib --save
 ```
 
 ## Usage
