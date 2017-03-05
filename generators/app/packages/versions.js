@@ -25,7 +25,7 @@ const versions = module.exports = {
   "supertest": "^1.2.0",
   "update-notifier": "^0.6.0",
   "webpack-target-electron-renderer": "^0.4.0",
-  "webpackman": "^0.6.0"
+  "webpackman": "^0.7.0"
 };
 
 module.exports.reduceDeps = xs => xs.reduce((total, curr) => {
