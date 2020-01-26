@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/ewnd9/generator-ewnd9-npm.svg?branch=master)](https://travis-ci.org/ewnd9/generator-ewnd9-npm)
 
+:warning: Moved to https://github.com/ewnd9/templates
+
 yo generator for node projects
 
 Templates:
